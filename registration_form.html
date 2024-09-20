@@ -1,0 +1,60 @@
+<html style="background-color:Ivory">
+<head>
+<title>registeration page</title>
+</head>
+<body style="font-family:Verdana, Geneva, Tahoma, sans-serif">
+    <script>
+        function validateform()
+        {
+            const name = document.getElementById('name').value;
+            const password = document.getElementById('password').value;
+            const conf_password = document.getElementById('conf_password').value;
+            if(password.length<6)
+            {
+                alert("The password must have more 6 characters");
+                return false;
+            }
+            else if(password !== conf_password)
+            {
+                alert("Confirm password didn't match with the new password");
+                return false;
+            }
+            else
+            {
+                alert("submitted");                
+                return true;
+            }
+        }
+    </script>
+<div style="text-align:center">
+<marquee style="background-color:HotPink;color:HoneyDew;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"><h1>Registration Page</h1></marquee>
+<h3><b><u><i>Enter your details below to register</i></u></b></h3><br>
+</div>
+<form class="container" style="text-align:center" onsubmit="return validateform()">
+<label for="name">Name:</label>
+<input type="text" name="name" id="name" required>
+<br><br>
+<label for="email">Email:</label>
+<input type="email" name="email" id="email" required>
+<br><br>
+<label for="course"><b><u>Select your course</u></b></label><br><br>
+<input type="radio" id="EEE" name="course"> 
+<label for="EEE">EEE</label><br>
+<input type="radio" id="ECE" name="course"> 
+<label for="ECE">ECE</label><br>
+<input type="radio" id="CSE_AIML" name="course"> 
+<label for="CSE_AIML">CSE(AIML)</label><br>
+<input type="radio" id="IT" name="course"> 
+<label for="IT">IT</label><br>
+<input type="radio" id="CSE" name="course"> 
+<label for="CSE">CSE</label><br><br>
+<label for="password">Create Password:</label>
+<input type="password" name="password" id="password" required>
+<br><br>
+<label for="conf_password">Confirm Password:</label>
+<input type="password" name="conf_password" id="conf_password" required>
+<br><br>
+<button type="submit">Register</button>
+</form>
+</body>
+</html>
